@@ -7,13 +7,15 @@ var {Todo} = require('./models/todo');
 var {User} = require('./models/user');
 
 var app = express();
+const port = process.env.PORT || 3000;
+
 //app.use(bodyParser);
 
 
 app.use(bodyParser.json());
 
-app.listen(3000, ()=> {
-  console.log('Starting server at port 3000');
+app.listen(port, ()=> {
+  console.log(`Starting server at ${port}`);
 });
 
 app.post('/todos', (req, res) => {
